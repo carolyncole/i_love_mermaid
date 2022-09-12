@@ -2,9 +2,9 @@
 
 ## Example Mermaid Diagrams
   **Will change diagrams to more complex eaxmples**
-  * [State Diagram](https://mermaid-js.github.io/mermaid/#/stateDiagram)
-  * [Flow Diagram](https://mermaid-js.github.io/mermaid/#/sequenceDiagram)
-  * [System Interaction Digram](https://mermaid-js.github.io/mermaid/#/flowchart?id=graph)
+  * [State Diagram](https://github.com/pulibrary/pdc_describe/blob/main/docs/work_states.md)
+  * [Flow Diagram](https://github.com/pulibrary/lib_jobs/tree/main/docs/peoplesoft_voucher)
+  * [System Interaction Digram](https://github.com/pulibrary/orangelight/blob/main/docs/request_form_diagram.md)
 
 ## System Scenario
   [see Scenario](https://github.com/carolyncole/i_love_mermaid/edit/main/scenario.md)
