@@ -16,5 +16,5 @@ end
 os->>u: Show Object
 u->>os: Mark as Ready for review
 os->>s: Ping Curator Object Ready For Review
-c->>s: Sees notification
+c-->>s: Sees notification
 ```
