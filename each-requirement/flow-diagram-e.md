@@ -30,6 +30,5 @@ alt Object is ready to be approved
   os->>os: Mark Object as Public
 else
   c->>os: Reject Object
-  os->>s: Ping User Object Rejected
 end
 ```
