@@ -9,5 +9,23 @@ You are designing a system that needs to:
 
 ```mermaid
 sequenceDiagram
-A->>B: Do something
+A->>B: Do Something
 ```
+
+## Theming
+1. Rectangles
+   * rect rgb(240, 255, 255)
+   * rect rgb(255, 240, 255)
+   * rect rgb(255, 255, 240)
+
+1. Overall 
+  ```
+  %%{init: { 'theme': 'forest',
+             'sequence': {'useMaxWidth':false, 
+                          'mirrorActors':false,   
+                          'diagramMarginX': 10
+                          } 
+            } 
+  }%%
+  ```
+
