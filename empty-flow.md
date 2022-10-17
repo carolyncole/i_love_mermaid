@@ -9,5 +9,28 @@ You are designing a system that needs to:
 
 ```mermaid
 sequenceDiagram
-A->>B: Do something
+actor user as User
+participant sys As Our System
+participant x As System x
+participant slack As Slack
+actor curator as Curator
+user->>sys: Create Object
+sys->>x: Request ID
+x->>sys: ID response
+sys->>user: Show Object
+user->>sys: Update Metadata
+alt System X cares about update
+  sys->>x: update Request
+  x->>sys: update status
+end
+sys->>user: Show Object
+user->>sys: Mark as Ready for Review
+sys->>slack: Notify Curator
+curator-->>slack: Notices Notification
+alt Object Ready to be approved?
+  curator->>sys: Approve Object
+else
+  curator->>syste: Reject Object
+end
+
 ```
