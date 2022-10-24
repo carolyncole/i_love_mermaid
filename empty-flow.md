@@ -9,7 +9,14 @@ You are designing a system that needs to:
 
 ```mermaid
 sequenceDiagram
-A->>B: Do Something
+actor user as User
+participant oursys as Our System
+participant sysx as System X
+user->>oursys: Create an Object
+oursys->>sysx: Mint and ID
+sysx->>oursys: return id
+oursys->>oursys: store id
+oursys->>user: Object created
 ```
 
 ## Theming
