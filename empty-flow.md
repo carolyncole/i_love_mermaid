@@ -12,11 +12,28 @@ sequenceDiagram
 actor user as User
 participant oursys as Our System
 participant sysx as System X
+actor curator as Curator
 user->>oursys: Create an Object
 oursys->>sysx: Mint and ID
 sysx->>oursys: return id
 oursys->>oursys: store id
 oursys->>user: Object created
+loop until the object approved
+user->>oursys: Update Object Metadata
+alt if System X cares
+  oursys->>sysx: Update Metdata
+  sysx->>oursys: metadata updated
+end
+oursys->>user: show updated object
+user->>oursys: Ready for review
+oursys->>curator: Please Review Obeject
+alt is the object ready approve?
+  curator->>oursys: Approves the Object
+else
+  curator->>oursys: Request Changes
+  oursys->>user: Changes have been requested
+end
+end
 ```
 
 ## Theming
