@@ -17,21 +17,22 @@ A->>B: Do Something
 Here is a cheet sheet of useful items for a mermaid flow diagram.  Full documentation can be found at [Mermaid.js](https://mermaid-js.github.io/mermaid/#/sequenceDiagram)
 
 ### participants
-  actor <name>: <display>
-  
-  participant <name>: <display>
+  participant [name]: [display name] **OR** actor [name]: [display name] (an actor diplays a stick figure and a participat displays a box
 
   
   ```mermaid
   sequenceDiagram
+  %%{init: { 'sequence': {'mirrorActors':false} } }%%
     actor you as You
     participant store as Pet store
   ```
 
 ### Alternate
- alt < choice >
+ alt [choice]
     ...
- else
+ else [another choice]
+    ...
+ else [yet another choice]
     ...
  end
 
@@ -49,7 +50,7 @@ Here is a cheet sheet of useful items for a mermaid flow diagram.  Full document
   ```
 
 ### Loop
- loop < until when>
+ loop [until when]
    ...
  end
 
@@ -67,15 +68,36 @@ Here is a cheet sheet of useful items for a mermaid flow diagram.  Full document
    * rect rgb(255, 240, 255)
    * rect rgb(255, 255, 240)
 1. Notes
-   * note <left/right> of <the particiapnt>: <note>
-3. Overall 
+   * note [left|right|over] of [the particiapnt]: <note>
+  ```mermaid
+  sequenceDiagram
+    participant spoon AS #129348;
+    participant mouth as #128068;
+    loop until you are full
+     note over spoon,mouth: Open wide
+      spoon->>mouth: Insert food on spoon
+    end
   ```
-  %%{init: { 'theme': 'forest',
+
+1. Overall 
+  Overall themes can be applied like a color theme: forest, dark, neutral
+  ```mermaid
+  %%{init: { 'theme': 'dark',
              'sequence': {'useMaxWidth':false, 
                           'mirrorActors':false,   
                           'diagramMarginX': 10
                           } 
             } 
   }%%
+  sequenceDiagram
+    actor you as You
+    participant store as Pet store
+    alt you love cats?
+      you->>store: Buy a cat
+    else you love fish
+      you->>store: Buy a fish
+    else you do not want a pet
+      you->>you: stay home
+    end  
   ```
 
