@@ -63,11 +63,24 @@ Here is a cheet sheet of useful items for a mermaid flow diagram.  Full document
 
 ### Theming
   Theming Mermaid can be done in a variety of ways.  See full documentation at [Mermaid.js](https://mermaid-js.github.io/mermaid/#/theming)
-1. Rectangles
+#### Rectangles
+   * rect rgb(255, 255, 240)
    * rect rgb(240, 255, 255)
    * rect rgb(255, 240, 255)
-   * rect rgb(255, 255, 240)
-1. Notes
+  ```mermaid
+  sequenceDiagram
+    rect rgb(240, 255, 255) 
+      A->>B: I like Green
+    end
+    rect rgb(255, 240, 255)
+    B->>A: I like Pink
+    rect rgb(255, 255, 240)
+    C->>C: Yellow is best
+    end
+    end
+  ```
+
+#### Notes
    * note [left|right|over] of [the particiapnt]: <note>
   ```mermaid
   sequenceDiagram
@@ -79,8 +92,8 @@ Here is a cheet sheet of useful items for a mermaid flow diagram.  Full document
     end
   ```
 
-1. Overall 
-  Overall themes can be applied like a color theme: forest, dark, neutral
+#### Overall Theming
+  * Overall themes can be applied like a color theme: forest, dark, neutral
   ```mermaid
   %%{init: { 'theme': 'dark',
              'sequence': {'useMaxWidth':false, 
