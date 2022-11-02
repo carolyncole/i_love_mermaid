@@ -17,6 +17,12 @@ oursys->>sysx: Mint an ID
 sysx->>oursys: return ID
 oursys->>oursys: Store ID
 oursys->>user: Object was created
+user->>oursys: Update Metadata
+alt Is System X is interested in the update?
+oursys->>sysx: Update Metadata
+sysx->>oursys: Updated metdata
+end
+oursys->>user: Object was update
 ```
 
 ## Cheet Sheet
