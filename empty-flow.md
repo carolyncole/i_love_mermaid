@@ -26,7 +26,7 @@ Here is a cheet sheet of useful items for a mermaid flow diagram.  Full document
     actor you as You
     participant store as Pet store
   ```
-
+ 
 ### Alternate
  alt [choice]
     ...
