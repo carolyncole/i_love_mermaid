@@ -9,7 +9,7 @@ You are designing a system that needs to:
 ```mermaid
 sequenceDiagram
   title A very basic Diagram
-A->>B: Do Something
+  A->>B: Do Something
 ```
 
 ## Cheat Sheet
@@ -23,6 +23,7 @@ Here is a cheet sheet of useful items for a mermaid flow diagram.  Full document
   ```mermaid
   sequenceDiagram
   %%{init: { 'sequence': {'mirrorActors':false} } }%%
+    title Actor Diagram
     actor you as You
     participant store as Pet store
   ```
@@ -38,6 +39,7 @@ Here is a cheet sheet of useful items for a mermaid flow diagram.  Full document
 
   ```mermaid
   sequenceDiagram
+    title Alternate Example Diagram
     actor you as You
     participant store as Pet store
     alt you love cats?
@@ -56,6 +58,7 @@ Here is a cheet sheet of useful items for a mermaid flow diagram.  Full document
 
   ```mermaid
   sequenceDiagram
+      title Loop Example Diagram
       loop until you are full
         spoon->>mouth: Insert food on spoon
       end
@@ -69,14 +72,15 @@ Here is a cheet sheet of useful items for a mermaid flow diagram.  Full document
    * rect rgb(255, 240, 255)
   ```mermaid
   sequenceDiagram
+    title  Highlight Rectangles Example Diagram
     rect rgb(240, 255, 255) 
       A->>B: I like Green
     end
     rect rgb(255, 240, 255)
-    B->>A: I like Pink
-    rect rgb(255, 255, 240)
-    C->>C: Yellow is best
-    end
+      B->>A: I like Pink
+      rect rgb(255, 255, 240)
+        C->>C: Yellow is best
+      end
     end
   ```
 
@@ -84,6 +88,7 @@ Here is a cheet sheet of useful items for a mermaid flow diagram.  Full document
    * note [left|right|over] of [the particiapnt]: <note>
   ```mermaid
   sequenceDiagram
+    title  Showing Notes Example Diagram
     participant spoon AS #129348;
     participant mouth as #128068;
     loop until you are full
@@ -103,6 +108,7 @@ Here is a cheet sheet of useful items for a mermaid flow diagram.  Full document
             } 
   }%%
   sequenceDiagram
+    title Dark Theme Example Diagram
     actor you as You
     participant store as Pet store
     alt you love cats?
