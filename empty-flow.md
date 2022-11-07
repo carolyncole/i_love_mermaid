@@ -9,10 +9,41 @@ You are designing a system that needs to:
 
 ```mermaid 
 sequenceDiagram
+%%{init: { 'theme': 'forest',
+             'sequence': {'useMaxWidth':true, 
+                          'mirrorActors':false,   
+                          'diagramMarginX': 10
+                          } 
+            } 
+  }%%
 actor user as User
 participant oursys as Our System
-user->>oursys: Creat an Object
-
+participant sysx as System X
+actor curator as Curator
+rect rgb(255, 255, 240)
+note right of user: Creation workflow
+  user->>oursys: Creat an Object
+  oursys->>sysx: Mint an ID
+  sysx->>oursys: Minted ID
+  oursys->>oursys: store id
+  oursys->>user: Object created
+end
+rect rgb(255, 240, 255)
+note left of user: Approval workflow
+  loop Is Approved?
+    user->>oursys: Update Metadata
+    alt Is System X Interested?
+      oursys->>sysx: Update Metadta
+    end
+    oursys->>user: Object updated
+    user->>oursys: Object Ready
+    oursys->>curator: Notify Curator Object Ready for review
+    alt Ready to approve?
+      curator->>oursys: Approve
+      oursys->>oursys: Make object Public
+    end
+  end  
+end
 ```
 
 ## Cheet Sheet
