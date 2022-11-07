@@ -7,7 +7,7 @@ You are designing a system that needs to:
 * A Curator needs to approve the object for it to show up publically in the system
 * A User can revoke an object at any time: Need to revoke System X ID
 
-```mermaid
+```mermaid 
 sequenceDiagram
 A->>B: Do Something
 ```
