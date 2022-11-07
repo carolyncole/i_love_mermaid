@@ -9,7 +9,10 @@ You are designing a system that needs to:
 
 ```mermaid 
 sequenceDiagram
-A->>B: Do Something
+actor user as User
+participant oursys as Our System
+user->>oursys: Creat an Object
+
 ```
 
 ## Cheet Sheet
