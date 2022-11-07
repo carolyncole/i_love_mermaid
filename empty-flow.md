@@ -9,20 +9,46 @@ You are designing a system that needs to:
 
 ```mermaid
 sequenceDiagram
+%%{init: { 'theme': 'forest',
+             'sequence': {'useMaxWidth':false, 
+                          'mirrorActors':true,   
+                          'diagramMarginX': 10
+                          } 
+            } 
+  }%%
 actor user as User
 participant oursys as Our Syetem
 participant sysx as System X
-user->>oursys: Create an Object
-oursys->>sysx: Mint an ID
-sysx->>oursys: return ID
-oursys->>oursys: Store ID
-oursys->>user: Object was created
-user->>oursys: Update Metadata
-alt Is System X is interested in the update?
-oursys->>sysx: Update Metadata
-sysx->>oursys: Updated metdata
+actor curat as Curator
+rect rgb(240, 255, 255)
+  note left of user: Object Create
+  user->>oursys: Create an Object
+  oursys->>sysx: Mint an ID
+  sysx->>oursys: return ID
+  oursys->>oursys: Store ID
+  oursys->>user: Object was created
 end
-oursys->>user: Object was update
+rect rgb(255, 240, 255)
+  note left of user: Object Approval
+  loop Until Object is Approved
+    user->>oursys: Update Metadata
+    alt Is System X is interested in the update?
+    oursys->>sysx: Update Metadata
+    sysx->>oursys: Updated metdata
+    end
+    oursys->>user: Object was update
+    user->>oursys: Object is Complete
+    oursys->>curat: Object Ready for review
+    alt Is Object ready to approve?
+      curat->>oursys: Approve Object
+      oursys->>oursys: Mark Object as Approved and Make it Public
+      oursys->>curat: Object is public
+    else
+      curat->>oursys: Issues with o=Obeject
+      oursys->>user: Notfiy user of issues
+    end
+  end
+end
 ```
 
 ## Cheet Sheet
