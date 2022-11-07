@@ -38,4 +38,4 @@
   Colors can draw your attention and add clarity
   
 ## Cheat sheet
-  See my cheat sheet for flow/sequence diagrams that I used for the presentation: https://github.com/carolyncole/i_love_mermaid/blob/main/chea-sheet.md
+  See my cheat sheet for flow/sequence diagrams that I used for the presentation: https://github.com/carolyncole/i_love_mermaid/blob/main/cheat-sheet.md
