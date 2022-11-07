@@ -37,5 +37,5 @@
 ## Style the Diagram
   Colors can draw your attention and add clarity
   
-## Cheet sheet
-  See my cheet sheet for flow/sequence diagrams that I used for the presentation: https://github.com/carolyncole/i_love_mermaid/blob/main/empty-flow.md#cheet-sheet
+## Cheat sheet
+  See my cheat sheet for flow/sequence diagrams that I used for the presentation: https://github.com/carolyncole/i_love_mermaid/blob/main/chea-sheet.md
