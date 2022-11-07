@@ -12,7 +12,7 @@ sequenceDiagram
 A->>B: Do Something
 ```
 
-## Cheet Sheet
+## Cheat Sheet
 
 Here is a cheet sheet of useful items for a mermaid flow diagram.  Full documentation can be found at [Mermaid.js](https://mermaid-js.github.io/mermaid/#/sequenceDiagram)
 
