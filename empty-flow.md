@@ -8,6 +8,7 @@ You are designing a system that needs to:
 
 ```mermaid
 sequenceDiagram
+  title A very basic Diagram
 A->>B: Do Something
 ```
 
