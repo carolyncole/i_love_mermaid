@@ -8,6 +8,43 @@ You are designing a system that needs to:
 
 ```mermaid
 sequenceDiagram
+  %%{init: { 'theme': 'forest',
+             'sequence': {'useMaxWidth':false, 
+                          'mirrorActors':true,   
+                          'diagramMarginX': 10
+                          } 
+            } 
+  }%%
   title A very basic Diagram
-  A->>B: Do Something
+  actor user as User
+  participant oursys as Our System 
+  participant sysx as System x
+  actor curat as Curator
+  rect rgb(255, 255, 240)
+    note left of user: Create an Object
+    user->>oursys: Create an Object
+    oursys->>sysx: Mint and ID
+    sysx->>oursys: return ID
+    oursys->>oursys: store the id
+    oursys->>user: Created object
+  end
+  rect rgb(240, 255, 255)
+    note left of user: Review an Object
+    loop Object approved?
+      user->>oursys: Update Object
+      alt Does System X care?
+        oursys->>sysx: Update System X
+      end
+      oursys->>user: Object Updated
+      user->>oursys: Ready for Review
+      oursys->>curat: Object ready for review
+      alt is ready to approve?
+        curat->>oursys: Appove Object
+        oursys->>oursys: Mark as public
+        oursys->>user: You object was Approved!
+      else
+        oursys->>user: Please update the object
+      end
+    end
+  end
 ```
